@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     Spinner spinner2;
     String fruit[]={"鳳梨","葡萄","芭樂","芒果","甘蔗","草莓"};
+    String cities[] = {"台北", "台中","高雄"};
+    String codes[] = {"02", "04", "07"};
     ArrayAdapter<String> adapter;
     ArrayList<Map<String,String>> mylist;
     SimpleAdapter adapter2;
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         //=================================================================
         spinner2 = (Spinner)findViewById(R.id.spinner2);
         mylist = new ArrayList();
-        HashMap<String,String> m1 = new HashMap<>();
+        //資料逐段輸入,教學用打法
+        /*HashMap<String,String> m1 = new HashMap<>();
         m1.put("city", "台北");
         m1.put("code", "02");
         mylist.add(m1);
@@ -44,7 +47,21 @@ public class MainActivity extends AppCompatActivity {
         HashMap<String,String> m3 = new HashMap<>();
         m3.put("city", "高雄");
         m3.put("code", "07");
-        mylist.add(m3);
+        mylist.add(m3);*/
+
+        //用for迴圈輸入資料
+
+      for (int i=0;i<cities.length;i++)
+        {
+            HashMap<String,String> m1 = new HashMap<>();
+            m1.put("city", cities[i]);
+            m1.put("code", codes[i]);
+            mylist.add(m1);
+        }
+
+
+
+
         //用androind提供的 layout
         /*adapter2 = new SimpleAdapter(MainActivity.this,
                     mylist,
